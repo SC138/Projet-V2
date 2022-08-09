@@ -1,6 +1,13 @@
 {% extends "base.html.twig" %}
 
+
+
 {% block main %}
+
+    {% for message in app.flashes('success') %}
+        {{ message }}
+    {% endfor %}
+
     {{ form_start(form) }}
 
     {{ form(form) }}

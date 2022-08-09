@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Pictures;
 use App\Form\PictureType;
+use App\Repository\PicturesRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,28 +17,32 @@ class AdminPicturesController extends AbstractController
      * @Route("/admin-pictures", name="admin_pictures")
      */
 
-    public function insertPicture(EntityManagerInterface $entityManager, Request $request, SluggerInterface $slugger){
+    public function insertPicture(PicturesRepository $picturesRepository, EntityManagerInterface $entityManager, Request $request, SluggerInterface $slugger){
 
-        $picture = new Pictures();
+        $pictures = new Pictures();
 
-        $form = $this->createForm(PictureType::class, $picture);
+        $form = $this->createForm(PictureType::class, $pictures);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
 
-            $pictures = $form->get('picture')->getData();
+            $image = $form->get('image')->getData();
 
-            $originalFilename = pathinfo($pictures->getclientOriginalName(), PATHINFO_FILENAME);
+            $originalFilename = pathinfo($image->getclientOriginalName(), PATHINFO_FILENAME);
 
             $safeFilename = $slugger->slug($originalFilename);
 
-            $newFilename = $safeFilename."-".uniqid().'.'.$pictures->guessExtension();
+            $newFilename = $safeFilename."-".uniqid().'.'.$image->guessExtension();
 
-            $pictures->move($this->getParameter('image_directory'), $newFilename);
+            $image->move(
+                $this->getParameter('images_directory'),
+                $newFilename
+            );
 
-            $pictures->setImage($newFilename);
-
+            //$image->setPicture($newFilename);
+            $pictures->setPicture($newFilename);
+            //$picturesRepository->add($pictures, true);
             $entityManager->persist($pictures);
             $entityManager->flush();
 
