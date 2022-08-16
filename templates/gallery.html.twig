@@ -4,9 +4,6 @@
     {% for picture in pictures %}
         <section>
             <img src="{{ asset('uploads/images/') ~ picture.picture }}">
-            <a href="{{ path ('admin_pictures_delete',{'id':picture.id }) }}">Supprimer cette photo</a>
         </section>
     {% endfor %}
-
-    <a class="bouton" href="{{ path('gallery') }}">Galerie</a>
 {% endblock %}

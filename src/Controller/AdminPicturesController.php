@@ -52,4 +52,21 @@ class AdminPicturesController extends AbstractController
         return $this->render("admin/pictures.html.twig", ['form' => $form->createView()]);
     }
 
+    /**
+     * @Route("/admin-pictures-delete/{id}",  name="admin_pictures_delete")
+     */
+
+    public function deletePicture($id,PicturesRepository $picturesRepository, EntityManagerInterface $entityManager){
+        $pictures = $picturesRepository->find($id);
+
+        if (!is_null($pictures)){
+            $entityManager->remove($pictures);
+            $entityManager->flush();
+
+            $this->addFlash('success', 'Photo supprimée');
+        }
+        return $this->redirectToRoute('home-page');
+
+    }
+
 }
