@@ -9,4 +9,11 @@
     {% endfor %}
 
     <a class="bouton" href="{{ path('gallery') }}">Galerie</a>
+    {% if app.session.started %}
+        <a class="bouton" href="{{ path('app_logout') }}">Déconnexion</a>
+
+        {% else %}
+            <a class="bouton" href="{{ path('app_login') }}">Connexion</a>
+    {% endif %}
+
 {% endblock %}

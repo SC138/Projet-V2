@@ -65,7 +65,7 @@ class AdminPicturesController extends AbstractController
 
             $this->addFlash('success', 'Photo supprimée');
         }
-        return $this->redirectToRoute('home-page');
+        return $this->redirectToRoute('admin_pictures');
 
     }
 
