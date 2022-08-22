@@ -1,19 +1,30 @@
 {% extends "base.html.twig" %}
 
+{% block header %}
+    <nav>
+        <ul>
+            <li>Rendez-vous</li>
+            <li>Tattoo Shop</li>
+            <li>Contact</li>
+        </ul>
+        {% if app.user %}
+            <a href="{{ path('app_logout') }}">Déconnexion</a>
+        {% else %}
+            <a href="{{ path('app_login') }}">Connexion</a>
+
+        {% endif %}
+    </nav>
+
+{% endblock %}
 {% block main %}
     {% for picture in pictures %}
         <section>
-            <img src="{{ asset('uploads/images/') ~ picture.picture }}">
+            <img src="{{ asset('uploads/images/') ~ picture.picture }}" alt="Photo de tatouage">
             <a href="{{ path ('admin_pictures_delete',{'id':picture.id }) }}">Supprimer cette photo</a>
         </section>
     {% endfor %}
 
     <a class="bouton" href="{{ path('gallery') }}">Galerie</a>
-    {% if app.session.started %}
-        <a class="bouton" href="{{ path('app_logout') }}">Déconnexion</a>
 
-        {% else %}
-            <a class="bouton" href="{{ path('app_login') }}">Connexion</a>
-    {% endif %}
 
 {% endblock %}
