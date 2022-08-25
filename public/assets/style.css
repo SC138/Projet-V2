@@ -18,20 +18,30 @@ body {
 /* UI KIT */
 
 h1 {
-
+    color: white;
+    text-align: center;
 }
 
 h2 {
-
+    font-family: "Loki Cola";
+    color: white;
+    text-align: center;
 }
 
+h4{
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
 p {
     font-family: "Arial Black";
+    color: white;
 
 }
 
 a {
     vertical-align: middle;
+    color: white;
 }
 
 .create-admin {
@@ -95,16 +105,15 @@ a {
 .img-home {
     display: flex;
     justify-content: space-evenly;
-    text-align: center;
+
 }
 
-.img-home img {
-    max-width: 500px;
-}
-section {
+img {
+    max-width: 200px;
     display: flex;
     justify-content: space-around;
 }
+
 
 .left, .right {
     width: 50%;
@@ -120,4 +129,19 @@ section {
 
 .artist {
     font-family: "Arial Black";
+}
+
+form{
+    color: white;
+    display: block;
+
+    margin-left: 45%;
+    width: 200px;
+    text-align: center;
+    align-content: center;
+}
+
+label{
+    width: 1rem;
+
 }
