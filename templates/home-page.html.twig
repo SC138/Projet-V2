@@ -1,11 +1,11 @@
 {% extends "base.html.twig" %}
 
 {% block header %}
-    <nav>
-        <ul>
-            <li>Rendez-vous</li>
-            <li>Tattoo Shop</li>
-            <li>Contact</li>
+    <nav class="nav-bar">
+        <ul class="li-nav">
+            <li><a href="#">Rendez-vous</a></li>
+            <li><a class="tattoo" href="#">Tattoo Shop</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
         {% if app.user %}
             <a href="{{ path('app_logout') }}">Déconnexion</a>
@@ -15,10 +15,16 @@
         {% endif %}
     </nav>
 
+    <div class="separator">
+        <h2>Le Shop</h2>
+    </div>
+
 {% endblock %}
+
+
 {% block main %}
     {% for picture in pictures %}
-        <section>
+        <section class="img-home">
             <img src="{{ asset('uploads/images/') ~ picture.picture }}" alt="Photo de tatouage">
             <a href="{{ path ('admin_pictures_delete',{'id':picture.id }) }}">Supprimer cette photo</a>
         </section>
@@ -27,4 +33,13 @@
     <a class="bouton" href="{{ path('gallery') }}">Galerie</a>
 
 
+    <section>
+        <div class="left">
+            <p class="artist">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, adipisci beatae cumque dolores ducimus et, facilis nemo quaerat saepe sed vel voluptas voluptatum. Autem harum minus possimus quo quod velit?A aliquam beatae corporis earum eveniet harum ipsum, labore laboriosam libero nihil obcaecati rerum sint soluta ut vero! A, ab ad alias deserunt in ipsam minus nisi sunt temporibus ut!</p>
+        </div>
+        <div class="right">
+            <img src="" alt="">
+        </div>
+    </section>
 {% endblock %}
+
