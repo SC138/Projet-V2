@@ -18,16 +18,16 @@ class DateController extends AbstractController
      * @Route ("/date-user", name="date_user")
      */
 
-    public function dateUser( DateUserRepository $dateUserRepository,User $user,UserRepository $userRepository,Request $request, EntityManagerInterface $entityManager){
+    public function dateUser( DateUserRepository $dateUserRepository,UserRepository $userRepository,Request $request, EntityManagerInterface $entityManager){
 
 
         $dateUser = new DateUser();
-        $user->setUser($this->getUser());
         $form = $this->createForm(DateUserType::class, $dateUser);
         $form->handleRequest($request);
 
 
         if( $form->isSubmitted() && $form->isValid()){
+            $dateUser->setRelation($this->getUser());
             $entityManager->persist($dateUser);
             $entityManager->flush();
         }

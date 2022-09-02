@@ -49,7 +49,10 @@ class AdminPicturesController extends AbstractController
             $this->addFlash('success', 'Photo Publiée');
         }
 
-        return $this->render("admin/pictures.html.twig", ['form' => $form->createView()]);
+        return $this->render("admin/pictures.html.twig", [
+            'form' => $form->createView(),
+            'pictures' => $pictures
+            ]);
     }
 
     /**

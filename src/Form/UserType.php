@@ -6,6 +6,7 @@ use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -20,8 +21,10 @@ class UserType extends AbstractType
                 'invalid_message' => 'Mot de passe invalide',
                 'first_options' => ['label' => 'Mot de passe'],
                 //POUR LE CSS: pour ajouter une classe sur un champ FORM: 'attr' => ['class' => 'nom de ma classe']
-                'second_option' => ['label' => 'Confirmer le mot de passe'],
+//                'second_option' => ['label' => 'Confirmer le mot de passe'],
+
             ])
+            ->add('Modifier',SubmitType::class)
         ;
     }
 
