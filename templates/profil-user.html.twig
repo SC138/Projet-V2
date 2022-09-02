@@ -19,11 +19,10 @@
 {% endblock %}
 
 {% block main %}
-<p>Nom : {{ app.user.name }}</p>
-<p>Prénom : {{ app.user.firstname }}</p>
-<p>E-mail : {{ app.user.email }}</p>
-<button>
-    <a href="{{ path('update_profil') }}">Modifier votre profil</a>
-</button>
+
+    <p>Nom : {{ app.user.name }}</p>
+    <p>Prénom : {{ app.user.firstname }}</p>
+    <p>E-mail : {{ app.user.email }}</p>
+
 {% endblock %}
 

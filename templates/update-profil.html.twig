@@ -19,5 +19,7 @@
 {% endblock %}
 
 {% block main %}
+    {% if app.user %}
     {{ form(form) }}
+    {% endif %}
 {% endblock %}

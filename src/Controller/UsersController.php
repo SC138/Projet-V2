@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Component\HttpFoundation;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
@@ -24,6 +25,7 @@ class UsersController extends AbstractController
     }
     /**
      * @Route("/update-profil",name="update_profil")
+     * @IsGranted("ROLE_USER")
      */
     public function updateProfile( HttpFoundation\Request $request, EntityManagerInterface $entityManager, UserPasswordHasherInterface $userPasswordHasher, UserRepository $userRepository){
         $user= $this->getUser();
