@@ -3,7 +3,12 @@
 {% block main %}
     {% for picture in pictures %}
         <section>
-            <img src="{{ asset('uploads/images/') ~ picture.picture }}">
+            <img src="{{ asset('uploads/images/') ~ picture.picture }}" alt="Photo de tatouage">
+
+            {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ path ('admin_pictures_delete',{'id':picture.id }) }}">Supprimer cette photo</a>
+            {% endif %}
+
         </section>
     {% endfor %}
 {% endblock %}

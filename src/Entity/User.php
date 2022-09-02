@@ -27,6 +27,48 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $email;
 
     /**
+     * @ORM\Column(type="string", length=180, unique=true)
+     */
+    private $name;
+
+    /**
+     * @ORM\Column(type="string", length=180, unique=true)
+     */
+    private $firstname;
+
+    /**
+     * @return mixed
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * @param mixed $firstname
+     */
+    public function setFirstname($firstname): void
+    {
+        $this->firstname = $firstname;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name): void
+    {
+        $this->name = $name;
+    }
+
+    /**
      * @ORM\Column(type="json")
      */
     private $roles = [];
@@ -36,6 +78,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string")
      */
     private $password;
+
+    /**
+     * @ORM\OneToOne(targetEntity=DateUser::class, mappedBy="Relation", cascade={"persist", "remove"})
+     */
+    private $dateUser;
 
     public function getId(): ?int
     {
@@ -124,5 +171,31 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    public function getDateUser(): ?DateUser
+    {
+        return $this->dateUser;
+    }
+
+    public function setDateUser(?DateUser $dateUser): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($dateUser === null && $this->dateUser !== null) {
+            $this->dateUser->setRelation(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($dateUser !== null && $dateUser->getRelation() !== $this) {
+            $dateUser->setRelation($this);
+        }
+
+        $this->dateUser = $dateUser;
+
+        return $this;
+    }
+
+    public function setUser(?UserInterface $getUser)
+    {
     }
 }
