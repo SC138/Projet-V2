@@ -7,12 +7,16 @@
             <li><a class="tattoo" href="http://localhost:8888/tattooshopv2/public/home-page">Tattoo Shop</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
+    </nav>
 
-        <div class="burger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
+        <nav class="nav-burger">
+            <ul class="li-burger">
+                <li><a href="http://localhost:8888/tattooshopv2/public/date-user">Rendez-vous</a></li>
+                <li><a class="tattoo" href="http://localhost:8888/tattooshopv2/public/home-page">Tattoo Shop</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+
 
         {% if app.user %}
             <a href="{{ path('app_logout') }}">
@@ -23,7 +27,15 @@
         {% endif %}
     </nav>
 
+    <div class="burger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
 {% endblock %}
+
+
 
 
 {% block main %}

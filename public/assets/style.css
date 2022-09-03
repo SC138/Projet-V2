@@ -181,13 +181,40 @@ label{
     background-color: white;
 }
 
-.nav-bar.active{
+.nav-burger{
+    display: none;
+}
+
+.nav-burger.active{
     left: 0;
 }
 
+.rdv{
+    width:100px;
+
+}
+
 @media (max-width: 640px) {
+
     .burger{
         display: block;
+    }
+
+    .li-burger {
+        list-style-type: none;
+        text-align: center;
+    }
+
+    .nav-burger.active{
+        display: block;
+    }
+
+    .nav-bar {
+        display:none;
+    }
+
+    .rdv{
+        margin: auto;
     }
 
     .burger.active .bar:nth-child(2){
