@@ -7,6 +7,13 @@
             <li><a class="tattoo" href="http://localhost:8888/tattooshopv2/public/home-page">Tattoo Shop</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
+
+        <div class="burger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
         {% if app.user %}
             <a href="{{ path('app_logout') }}">
                 <span>Bonjour : {{ app.user.firstname }} </span>Déconnexion</a>
