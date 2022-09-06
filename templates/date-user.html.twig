@@ -3,16 +3,35 @@
 
 
 {% block main %}
+    <div id="date-user">
+        {% for message in app.flashes('success') %}
+            {{ message }}
+        {% endfor %}
 
-    {% for message in app.flashes('success') %}
-        {{ message }}
-    {% endfor %}
+        {{ form_start(form) }}
 
-    {{ form_start(form) }}
+        {{ form(form) }}
 
-    {{ form(form) }}
-
-    {{ form_end(form) }}
+        {{ form_end(form) }}
+    </div>
 
 
+
+{% endblock %}
+
+{% block footer %}
+    <section>
+        <div class="contact">
+            <h2>Tattoo <br> Shop</h2>
+            <div class="adresse">
+                <h2>Adresse</h2>
+                <p>12 Rue Jules <br> Guesde <br> 33850 Léognan</p>
+            </div>
+            <div class="horaires">
+                <h2>Horaires</h2>
+                <p>Du mardi au samedi <br> 10h - 19h</p>
+            </div>
+        </div>
+        <p class="copyright">Copyright Tattoo Shop - 2022</p>
+    </section>
 {% endblock %}

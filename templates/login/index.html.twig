@@ -6,19 +6,33 @@
 
 
 {% block main  %}
-    <div >
-        <h1>Bonjour !</h1>
-        <div >
-            <h2 >Espace de connexion</h2>
-            <form action="{{ path('app_login') }}" method="post" >
-                <label for="username">Email:</label>
-                <input type="text" id="username" name="_username" value="{{ last_username }}" class="example-wrapper">
+    <div id="login" >
+        <h2>Espace de connexion</h2>
+        <form action="{{ path('app_login') }}" method="post" >
+            <label for="username">Email:</label>
+            <input type="text" id="username" name="_username" value="{{ last_username }}" class="example-wrapper">
 
-                <label for="password"> Votre mot de passe: </label>
-                <input type="password" id="password" name="_password" class="example-wrapper">
+            <label for="password"> Votre mot de passe: </label>
+            <input type="password" id="password" name="_password" class="example-wrapper">
 
-                <button type="submit" class="btn"> Connexion </button>
-            </form>
-        </div>
+            <button type="submit" class="btn"> Connexion </button>
+        </form>
     </div>
+{% endblock %}
+
+{% block footer %}
+    <section>
+        <div class="contact">
+            <h2>Tattoo <br> Shop</h2>
+            <div class="adresse">
+                <h2>Adresse</h2>
+                <p>12 Rue Jules <br> Guesde <br> 33850 Léognan</p>
+            </div>
+            <div class="horaires">
+                <h2>Horaires</h2>
+                <p>Du mardi au samedi <br> 10h - 19h</p>
+            </div>
+        </div>
+        <p class="copyright">Copyright Tattoo Shop - 2022</p>
+    </section>
 {% endblock %}
