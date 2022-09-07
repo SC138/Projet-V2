@@ -10,12 +10,12 @@
         <h2>Espace de connexion</h2>
         <form action="{{ path('app_login') }}" method="post" >
             <label for="username">Email:</label>
-            <input type="text" id="username" name="_username" value="{{ last_username }}" class="example-wrapper">
+            <input type="email" id="username" name="_username" value="{{ last_username }}" class="form-control">
 
-            <label for="password"> Votre mot de passe: </label>
-            <input type="password" id="password" name="_password" class="example-wrapper">
+            <label class="mt-4" for="password"> Votre mot de passe: </label>
+            <input type="password" id="password" name="_password" class="form-control">
 
-            <button type="submit" class="btn"> Connexion </button>
+            <button type="submit" class="btn form-control my-4" > Connexion </button>
         </form>
     </div>
 {% endblock %}
