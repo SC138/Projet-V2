@@ -9,9 +9,13 @@
             <p>Prénom : {{ app.user.firstname }}</p>
             <p>E-mail : {{ app.user.email }}</p>
 
-            <button class="edit-profil">
-                <a href="{{ path('update_profil') }}">Modifier profil</a>
-            </button>
+            <div class="container">
+                <a class="button" href="{{ path('update_profil') }}">Modifier profil</a>
+            </div>
+
+{#            <button class="edit-profil btn form-control my-4" type="submit">#}
+{#                <a href="{{ path('update_profil') }}">Modifier profil</a>#}
+{#            </button>#}
         </div>
     </section>
 

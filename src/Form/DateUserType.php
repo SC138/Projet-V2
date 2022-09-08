@@ -15,11 +15,11 @@ class DateUserType extends AbstractType
     {
         $builder
             ->add('DateMeet',DateTimeType::class, [
-                'label'=>'Date de Rendez-vous',
+                'label'=>'Date de Rendez Vous',
                 'label_attr' => ['class' => 'rdv'],
 
             ])
-            ->add('Envoyer', SubmitType::class);
+            ->add('Envoyer', SubmitType::class, ['attr'=>['class'=>'form-control my-4']]);
         ;
 
     }

@@ -59,7 +59,15 @@ footer{
     align-items: center;
 }
 
+.account{
+    font-family: "Loki Cola", fantasy;
+    text-align: center;
+    font-size: 50px;
+}
 
+.create-user{
+    height: 55vh;
+}
 
 
 /* UI KIT */
@@ -105,17 +113,24 @@ a {
 
     justify-content: center;
     padding: 30px;
+    height: 55vh;
 }
 
 .edit-profil{
-    background-color: transparent;
     border-color: white;
     margin: 20px;
+    border-radius: 2px;
 }
 
 .edit-profil a{
     padding: 5px;
+    color: black;
     text-decoration: none;
+}
+
+.edit-profil a:hover{
+    background-color: black;
+    color: white;
 }
 
 .button{
@@ -354,8 +369,10 @@ label{
 }
 
 .rdv{
-    margin: 50px;
-    width:100px;
+    font-family: "Loki Cola", fantasy;
+    font-size: 28px;
+    margin: 20px;
+    width:122px;
 }
 
 /*#date_user{*/
@@ -413,6 +430,7 @@ label{
     color: white;
     font-size: 15px;
     text-align: center;
+    padding-right: 4rem;
 }
 
 
@@ -423,6 +441,14 @@ label{
 
 
 @media (max-width: 680px) {
+
+    #date-user{
+        margin-right: 180px;
+    }
+
+    .create-user{
+        margin: auto;
+    }
 
     .img-home{
         margin: auto;
@@ -456,7 +482,9 @@ label{
         list-style-type: none;
     }
 
-
+    .copyright{
+        padding-left: 4rem;
+    }
 
     .rdv{
         margin: auto;
