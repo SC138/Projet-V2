@@ -14,7 +14,7 @@ class GalleryController extends AbstractController
 
     public function gallery (PicturesRepository $picturesRepository){
 
-        $pictures = $picturesRepository->findAll();
+        $pictures = $picturesRepository->findBy([], ['id' => 'DESC']);
 
         return $this->render('gallery.html.twig', ['pictures'=> $pictures]);
     }

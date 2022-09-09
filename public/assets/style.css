@@ -293,7 +293,7 @@ nav h1{
 
 .shop {
    position:relative;
-    background-image: url('../img/picture-home.jpeg');
+    background-image: url('../img/300dpi-correction.jpg');
     height:70vh;
     background-size:cover;
     background-position:bottom;
@@ -304,6 +304,8 @@ nav h1{
     font-family: "Helvetica",sans-serif;
     margin:0;
 }
+
+
 
 form{
     color: white;
@@ -325,7 +327,12 @@ label{
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
+}
 
+.publish{
+    color:white;
+    text-align: center;
+    font-size: 25px;
 }
 
 #all-pictures{
@@ -338,9 +345,15 @@ label{
     margin-left: 20px;
     padding-top: 5px;
     padding-bottom: 5px;
+    cursor: pointer;
 }
 
-
+.pictures-gallery:active{
+    margin-left: 20%;
+    padding-right: 20%;
+    transform: scale(1.5);
+    transition: 1s;
+}
 
 .burger{
     display: none;
@@ -450,6 +463,10 @@ label{
         margin: auto;
     }
 
+    .update-profil{
+        margin-right: 180px;
+    }
+
     .img-home{
         margin: auto;
         padding: 10px;
@@ -459,6 +476,7 @@ label{
         width: 90%;
         margin: auto;
     }
+
 
     .burger{
         display: block;

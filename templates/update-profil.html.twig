@@ -3,8 +3,10 @@
 
 
 {% block main %}
-    {% if app.user %}
-    {{ form(form) }}
-    {% endif %}
+    <div class="update-profil">
+        {% if app.user %}
+            {{ form(form) }}
+        {% endif %}
+    </div>
 {% endblock %}
 
