@@ -5,14 +5,12 @@
 {% block title %}Register{% endblock %}
 
 {% block main %}
-    <h1 class="create-admin">Création Administrateur</h1>
-
-    {{ form_start(registrationForm, { 'attr': {'class': 'champsForm'}}) }}
-        {{ form_row(registrationForm.email, { 'attr': {'class': 'champsMail'}}) }}
-        {{ form_row(registrationForm.password, { 'attr': {'class': 'champsPassword'}}) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+    <h1 class="create-admin">Creation Administrateur</h1>
+    <div class="register">
+        {{ form_start(registrationForm, { 'attr': {'class': 'form-control'}}) }}
+        {{ form_row(registrationForm.email, { 'attr': {'class': 'form-control'}}) }}
+        {{ form_row(registrationForm.password, { 'attr': {'class': 'form-control'}}) }}
+        {{ form_end(registrationForm) }}
+    </div>
 {% endblock %}
 
