@@ -160,31 +160,24 @@ a {
     display: flex;
     align-items: center;
     width: 100%;
-    padding-right: 30%;
 }
 
 .form-control{
     background-color: transparent;
     color: white;
-
 }
 
-/*.champsForm {*/
-/*    color: white;*/
-/*    text-align: center;*/
-/*}*/
+.list-users{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 
-/*.champsMail{*/
-/*    margin-top: 2vw;*/
-/*    margin-left: 2vw;*/
-/*    margin-bottom: 2vw;*/
-/*    color: black;*/
-/*}*/
-
-/*.champsPassword{*/
-/*    margin-left: 2vw;*/
-/*    margin-right: 25px;*/
-/*}*/
+.title-list{
+    font-family: "Loki Cola", fantasy;
+    font-size: 60px;
+}
 
 .nav-bar{
     position: relative;

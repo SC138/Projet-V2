@@ -1,11 +1,14 @@
 {% extends "base.html.twig" %}
 
 {% block main %}
+    <h1 class="title-list">Liste des utilisateurs</h1>
     {% for admin in admins %}
-        <li><a href="{{ path('admin_admin_update', {'id':admin.id}) }}"><p>{{ admin.name }}</p></a></li>
-        <li><a href="{{ path('admin_delete_admin', {'id':admin.id}) }}">Supprimer compte</a></li>
-
-
+        <div class="list-users">
+            <ul>
+                <li><a href="{{ path('admin_admin_update', {'id':admin.id}) }}"><p>{{ admin.name }}</p></a></li>
+                <li><a href="{{ path('admin_delete_admin', {'id':admin.id}) }}">Supprimer compte</a></li>
+            </ul>
+        </div>
     {% endfor %}
 
 {% endblock %}
